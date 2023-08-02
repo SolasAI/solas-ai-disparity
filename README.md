@@ -47,10 +47,19 @@ For more detailed examples, please refer to our [example notebooks](https://gith
 - Adverse Impact Ratio (AIR)
 - By-Quantile Adverse Impact Ratio
 - Categorical Adverse Impact Ratio
-- Segmented Adverse Impact Ratio
-- Standardized Mean Difference (SMD)
-- Residual Standardized Mean Difference
+- Custom Disparity Metric
+- False Discovery Rate
+- False Negative Rate
+- False Positive Rate
 - Odds Ratio
+- Precision
+- Residual Standardized Mean Difference
+- Scoring Impact Ratio
+- Segmented Adverse Impact Ratio
+- Selection Impact Ratio
+- Standardized Mean Difference (SMD)
+- True Negative Rate
+- True Positive Rate
 
 Additional metrics are coming soon, including a generic customizable disparity testing function, which can create a disparity measurement from nearly any `scikit-learn`-style metric.
 
