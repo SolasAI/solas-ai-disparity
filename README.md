@@ -75,7 +75,7 @@ To run the example notebooks in this repository, also install the following:
 pip install notebook xgboost scikit-learn
 ```
 
-SolasAI is supported on Python 3.7 through 3.10, on Windows, MacOS, and Linux.
+SolasAI is supported on Python 3.7 through 3.11, on Windows, MacOS, and Linux.
 
 ## Why SolasAI?
 
