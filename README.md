@@ -75,7 +75,7 @@ To run the example notebooks in this repository, also install the following:
 pip install notebook xgboost scikit-learn
 ```
 
-SolasAI is supported on Python 3.7 through 3.11, on Windows, MacOS, and Linux.
+SolasAI is supported on Python 3.8 through 3.12, on Windows, macOS (ARM/x86), and Linux.
 
 ## Why SolasAI?
 
@@ -94,3 +94,33 @@ In addition to standard metrics like the Adverse Impact Ratio (AIR) and Standard
 Other examples of enhancements include:
 - Customizable practical significance thresholds
 - Compatibility with sample weights
+
+## Troubleshooting: A note about new versions of Plotly and Kaleido
+The `solas_disparity` module uses Plotly for displaying all charts and plots. For certain plotting operations, Plotly depends on another Python package named Kaleido. Kaleido, in turn, relies on a Chrome browser engine to support these plotting operations.
+
+In old versions of the Kaleido package (prior to 1.0.0), a Chrome binary was bundled as part of the Kaleido Python package. [As of version 1.0.0](https://plotly.com/blog/kaleido-the-next-generation/), Kaleido now requires the user to provide a Chrome binary.
+
+### If you already have Chrome installed
+If the Chrome browser is already installed on the machine where you are installing `solas_disparity`, there is nothing more for you to do. Kaleido will work as intended.
+
+### If you want to use Kaleido 1.0.0+ but don't have Chrome installed
+Install the solas-ai package as usual:
+
+```bash
+pip install solas-ai
+```
+
+Then, in that same Python environment, run the following Python code:
+
+```python
+from kaleido import get_chrome_sync
+
+get_chrome_sync()
+```
+
+### If you do NOT want to use Kaleido 1.0.0+
+You can install the `solas_disparity` package along with older versions of the Kaleido and Plotly packages:
+
+```bash
+pip install solas-ai "kaleido<1.0.0" "plotly<6.0.0"
+```
